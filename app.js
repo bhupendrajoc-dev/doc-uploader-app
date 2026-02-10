@@ -24,7 +24,6 @@ app.post("/upload", upload.single("file"), async (req, res) => {
 
     const key = `${Date.now()}-${file.originalname}`;
     console.log("Uploading file to S3 with key:", key);
-    console.log("File size (bytes):", config.s3.bucketName, file.size);
     try{
         await uploadToS3(file)
     }catch(err){
