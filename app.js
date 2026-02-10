@@ -34,6 +34,7 @@ app.post("/upload", upload.single("file"), async (req, res) => {
     res.send(`
       <p>File uploaded successfully</p>
       <a href="/">Upload another file</a>
+      <a href="/files">View uploaded files</a>
     `);
 
   } catch (err) {
